@@ -1,15 +1,40 @@
-<div class="primary">
-    <h3>5-day Forecast</h3>
-    <ul *ngFor="let forecast of weatherData">
-        <li>
-            {{ forecast.dt_txt | date:'EEE, MMM, dd' }}
-            <img src="assets/images/{{forecast.weather[0].icon}}.png" alt="icon">
-            <span>
-                {{ forecast.main.temp_min | number:'1.0-0' }}°F \
-                {{ forecast.main.temp_max | number:'1.0-0' }}°F
-            </span>
-            <span>{{ forecast.weather[0].main }}</span>
-            <i class="fa fa-caret-down" aria-hidden="true"></i>
-        </li>
-    </ul>
+<div class="">
+
+
+
+<div class="my-container">
+    <div class="">
+        <div class="search">
+            <form #form="ngForm" (submit)="onSubmit()">
+                <input type="text" value="" class="form-control" placeholder="search city" name="cityName" [(ngModel)]="cityName">
+            </form>
+        </div>
+    </div>
+
+    <div class="">
+        <div>
+            <div class="" *ngFor="let forecast of weatherData">
+                <div class="card text-bg-primary mb-3 mt-3" style="max-width: 18rem;">
+                    <div class="card-header text-center">
+                        <h2>Lagos</h2>
+                    </div>
+                    <div class="card-body">
+                    <p class="card-text">Date: {{ forecast.dt_txt | date:'EEE, MMM, dd' }}</p>
+                    <p class="card-text">Summary: {{ forecast.weather[0].main }}</p>
+                    <p class="card-text">Min Temperature: {{ forecast.main.temp_min | number:'1.0-0' }} °F </p>
+                    <p class="card-text">Max Temperature: {{ forecast.main.temp_max | number:'1.0-0' }} °F</p>
+                    <p class="card-text">Pressure: {{forecast.main.pressure }} hPa</p>
+                    <p class="card-text">Humidity: {{ forecast.main.humidity }} %</p>
+                    </div>
+                </div>
+            </div>    
+        </div>    
+    </div>
+        
+    
+    
 </div>
+
+
+
+

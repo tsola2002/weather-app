@@ -14,6 +14,7 @@ export class WeatherComponent implements OnInit {
   humidity: number = 0;
   pressure: number = 0;
   summary: string = '';
+  name: string = '';
   iconURL: string = '';
 
   constructor(private weatherService: WeatherService) { }
@@ -25,8 +26,9 @@ export class WeatherComponent implements OnInit {
 
       this.weatherService.getWeather().subscribe({
         next: (res) => {
-          console.log(res);
+          console.log("FULL WEATHER DATA", res);
           this.weatherData = res;
+          this.name = this.weatherData.name;
           this.temperature = this.weatherData.main.temp;
           this.feelsLikeTemp = this.weatherData.main.feels_like;
           this.humidity = this.weatherData.main.humidity;
@@ -37,7 +39,7 @@ export class WeatherComponent implements OnInit {
         error: (error) => console.log(error.message),
 
         complete: () => console.info('API call completed')
-      })
+      });
    }
 
   //  getWeather() {

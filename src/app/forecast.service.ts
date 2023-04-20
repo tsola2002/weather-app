@@ -8,6 +8,9 @@ import { map, switchMap } from 'rxjs/operators';
 })
 export class ForecastService {
 
+  apiKey = '14fe280929b43808d00f4037173197b4';
+  apiUrl = 'https://api.openweathermap.org/data/2.5';
+
   constructor(private http:HttpClient) { }
 
   getWeatherForecast(){
@@ -32,5 +35,10 @@ export class ForecastService {
         return this.http.get('https://api.openweathermap.org/data/2.5/forecast', { params: values });
       })
     )
+  }
+
+  getForecastByCity(cityName: string): Observable<any> {
+    const url = `${this.apiUrl}/forecast?q=${cityName}&appid=${this.apiKey}&units=imperial`;
+    return this.http.get(url);
   }
 }
