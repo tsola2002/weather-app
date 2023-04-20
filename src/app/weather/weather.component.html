@@ -3,14 +3,14 @@
     <div class="card text-bg-primary mb-3 mt-3" style="max-width: 18rem;">
         <div class="card-header text-center">
             <h2>Lagos</h2>
-            <p>Weather Image</p>
+            <p><img src="{{iconURL}}" alt="weather image"></p>
         </div>
         <div class="card-body">
-          <p class="card-text">Summary: Rain</p>
-          <p class="card-text">Temperature: 50 °F</p>
-          <p class="card-text">Feels Like: 52 °F</p>
-          <p class="card-text">Pressure: 1024 hPa</p>
-          <p class="card-text">Humidity: 50%</p>
+          <p class="card-text">Summary: {{summary}}</p>
+          <p class="card-text">Temperature: {{temperature}} °F</p>
+          <p class="card-text">Feels Like: {{feelsLikeTemp}} °F</p>
+          <p class="card-text">Pressure: {{pressure}} hPa</p>
+          <p class="card-text">Humidity: {{humidity}}%</p>
         </div>
     </div>
 </div>
