@@ -1,1 +1,4 @@
-<p>today works!</p>
+<div *ngIf="weatherNow">
+    <div>{{currentTime | date: "HH:mm - EE MMM"}}</div>
+    <div class="location">{{location.name}}, {{location.country}}</div>
+</div>
