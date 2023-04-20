@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
 import { TodayComponent } from './today/today.component';
+import { FutureComponent } from './future/future.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
-    TodayComponent
+    TodayComponent,
+    FutureComponent
   ],
   imports: [
     BrowserModule,
